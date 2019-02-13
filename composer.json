@@ -1,0 +1,13 @@
+{
+    "name": "regionhalland/region-halland-template-top-links-vardgivare",
+    "description": "Topplänkar på en landningssida på vardgivarwebben",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roland Hydén",
+            "email": "Roland.Hyden@Regionhalland.se"
+        }
+    ],
+    "require": {}
+}
