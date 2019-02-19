@@ -6,7 +6,7 @@
 	/*
 	Plugin Name: Region Halland Template Top Links Vardgivare
 	Description: Topplänkar på en landningssida för vårdgivarwebben
-	Version: 1.0.0
+	Version: 1.1.0
 	Author: Roland Hydén
 	License: Free to use
 	Text Domain: regionhalland
@@ -234,6 +234,56 @@
 
 			endif;
 
+	}
+
+	function get_region_halland_top_links_vardgivare()
+	{
+		return get_field('top_links');
+	}
+
+	function get_region_halland_news_category_vardgivare()
+	{
+		if(!get_field('show_news')) return null;
+		$categories = get_field('news_categories');
+		if(!is_array($categories)) return null;
+
+		return get_term($categories[0]);
+	}
+	
+
+	function get_region_halland_news_categories_vardgivare()
+	{
+		global $post;
+
+		if(!get_field('show_news')) return array();
+		$category_ids = get_field('news_categories');
+		$tax_query = null;
+		if($category_ids){
+			$tax_query = array(
+				array(
+					'taxonomy' => 'category',
+					'field'    => 'term_id',
+					'terms'    => $category_ids
+				)
+			);
+		}
+
+		$args = array(
+			'post_type' => 'news',
+			'posts_per_page' => 3,
+			'tax_query' => $tax_query
+		);
+
+		$pages = get_posts($args);
+		
+		foreach ($pages as $page) {
+
+			// Lägg till sidans url 	
+			$page->url 			= get_page_link($page->ID);
+			
+		}
+		
+		return $pages;
 	}
 
 	// Metod som anropas när pluginen aktiveras
