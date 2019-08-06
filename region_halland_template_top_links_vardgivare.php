@@ -6,9 +6,9 @@
 	/*
 	Plugin Name: Region Halland Template Top Links Vardgivare
 	Description: Topplänkar på en landningssida för vårdgivarwebben
-	Version: 1.1.0
+	Version: 1.2.0
 	Author: Roland Hydén
-	License: Free to use
+	License: GPL-3.0
 	Text Domain: regionhalland
 	*/
 

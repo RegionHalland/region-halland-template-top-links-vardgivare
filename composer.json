@@ -2,7 +2,7 @@
     "name": "regionhalland/region-halland-template-top-links-vardgivare",
     "description": "Topplänkar på en landningssida på vardgivarwebben",
     "type": "wordpress-plugin",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Roland Hydén",
